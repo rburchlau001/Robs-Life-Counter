@@ -2,7 +2,7 @@
   "name": "MTG Minimalist Life Counter",
   "short_name": "MTG Life",
   "description": "Zero-friction, battery-efficient life tracking for 2 players.",
-  "start_url": ".",
+  "start_url": "/Robs-Life-Counter/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#000000",
