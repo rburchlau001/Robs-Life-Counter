@@ -1,5 +1,7 @@
 # Minimalist MTG Life Counter
 
+**🔴 Live App:** [Launch MTG Life Counter](https://rburchlau001.github.io/Robs-Life-Counter/)
+
 A heavily optimized, strictly Vanilla JS Progressive Web App (PWA) designed for frictionless 1v1 Magic: The Gathering tabletop play. 
 
 ## Features
