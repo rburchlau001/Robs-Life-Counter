@@ -1,0 +1,132 @@
+:root {
+  --font-family: 'Inter', sans-serif;
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  /* Light transparent accent colors */
+  --p1-accent: rgba(52, 152, 219, 0.12); /* Light transparent blue */
+  --p2-accent: rgba(231, 76, 60, 0.12);  /* Light transparent red */
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  user-select: none; /* Prevent text selection completely */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Prevent scrolling */
+  background-color: var(--bg-color);
+  font-family: var(--font-family);
+  color: var(--text-color);
+  touch-action: pan-x pan-y; /* Prevent pinch zoom but allow system gestures, though JS handles prevention better */
+}
+
+/* Hard disable pinch to zoom and overscroll natively */
+body {
+  overscroll-behavior: none;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Zones */
+.player-zone {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.player-1 {
+  background-color: var(--p1-accent);
+}
+
+.player-2 {
+  background-color: var(--p2-accent);
+  transform: rotate(180deg); /* Face the opponent across the table */
+}
+
+/* Life Number Display */
+.life-display {
+  pointer-events: none; /* Let taps pass through to the invisible hitboxes */
+  z-index: 10;
+}
+
+.life-text {
+  font-size: 35vh; /* Massive typography scaled to height */
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  text-shadow: 0px 4px 20px rgba(0, 0, 0, 0.8); /* Depth over the colored background */
+}
+
+/* Invisible hitboxes for increasing / decreasing life */
+.half-tap {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  z-index: 5;
+}
+
+.top-half {
+  top: 0;
+}
+
+.bottom-half {
+  bottom: 0;
+}
+
+/* Subtle flash on active tap for visual feedback */
+.half-tap:active {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Center elements */
+.center-line {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-50%);
+  z-index: 20;
+}
+
+.reset-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 30;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #1a1a1a;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: #aaaaaa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+  transition: all 0.2s ease;
+}
+
+.reset-button:active {
+  background-color: #333333;
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+}

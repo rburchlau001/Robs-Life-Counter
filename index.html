@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" /> <!-- Optional placeholder -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <link rel="manifest" href="/manifest.json" />
+    <link rel="apple-touch-icon" href="/icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <title>MTG Life</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <div id="app">
+      <!-- Player 2 (Top, Inverted) -->
+      <div id="p2-zone" class="player-zone player-2">
+        <div class="half-tap top-half" data-player="2" data-action="inc"></div>
+        <div class="half-tap bottom-half" data-player="2" data-action="dec"></div>
+        <div class="life-display">
+          <span id="p2-life" class="life-text">20</span>
+        </div>
+      </div>
+
+      <!-- Player 1 (Bottom, Standard) -->
+      <div id="p1-zone" class="player-zone player-1">
+        <div class="half-tap top-half" data-player="1" data-action="inc"></div>
+        <div class="half-tap bottom-half" data-player="1" data-action="dec"></div>
+        <div class="life-display">
+          <span id="p1-life" class="life-text">20</span>
+        </div>
+      </div>
+
+      <!-- Center Elements -->
+      <div class="center-line"></div>
+      <button id="reset-button" class="reset-button">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.59-9.28l5.67-5.67"/>
+        </svg>
+      </button>
+    </div>
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
