@@ -130,3 +130,20 @@ body {
   color: #ffffff;
   border-color: rgba(255, 255, 255, 0.4);
 }
+
+/* 
+  Shrink the invisible tap targets away from iOS system gesture edges. 
+  Any taps in the gap will fall through to the background and be ignored.
+*/
+
+/* Player 2 is rotated 180deg, so its local "bottom" is the physical top of the phone */
+.player-2 .bottom-half {
+  bottom: env(safe-area-inset-top);
+  height: calc(50% - env(safe-area-inset-top));
+}
+
+/* Player 1 is standard, so its local "bottom" is the physical bottom of the phone */
+.player-1 .bottom-half {
+  bottom: env(safe-area-inset-bottom);
+  height: calc(50% - env(safe-area-inset-bottom));
+}
